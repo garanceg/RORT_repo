@@ -1,0 +1,39 @@
+# arcs (adjacency matrix)
+arcs:
+0 0 1 1 0 0
+0 0 0 1 0 0
+0 0 0 0 1 0
+0 0 0 0 1 1
+0 0 0 0 0 1
+0 0 0 0 0 0
+
+# sources
+sources: 1 2
+
+# attack traffic
+attack_traffic: 20 20
+
+# n and t
+n: 6
+t: 6
+
+# cost of VNFs
+cost_VNF: 5 5 5 5 5 5
+
+# node capacities
+node_cap: 0 0 50 50 50 0
+
+# arcs capacitites
+arcs_cap : 
+0 0 50 50 0 0
+0 0 0 50 0 0
+0 0 0 0 50 0
+0 0 0 0 50 50
+0 0 0 0 0 50
+0 0 0 0 0 0
+
+# resource usage per VNF
+resource_VNF: 5 
+
+# filtering capacity per VNF
+filtering_cap_VNF: 5
