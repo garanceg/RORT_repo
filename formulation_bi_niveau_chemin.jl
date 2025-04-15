@@ -4,8 +4,8 @@ using IterTools
 
 include("utils.jl")
 
-arcs, sources, attack_traffic, n, t, cost_VNF, node_cap, arcs_cap, resource_VNF, 
-        filtering_cap_VNF = get_data("./instances/instance_1.txt")
+arcs, sources, attack_traffic, n, t, cost_VNF, node_cap, arcs_cap, resource_VNF,
+filtering_cap_VNF = get_data("./instances/instance_1.txt")
 
 
 A = length(sources)
@@ -108,11 +108,11 @@ function column_generation_model()
     while !stop
         println("\n=== Iteration $number_of_it ====")
         number_of_it += 1
-        master_opt, y_opt = master_problem_3_bis(uncertainty_set)
+        master_opt, y_opt = master_problem(uncertainty_set)
         if y_opt == -1
             break
         end
-        sub_opt, f_opt, v_opt, PHI_opt = sub_problem_3_bis(y_opt)
+        sub_opt, f_opt, v_opt, PHI_opt = sub_problem(y_opt)
         if f_opt == -1
             break
         end

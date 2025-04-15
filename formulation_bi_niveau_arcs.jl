@@ -60,10 +60,7 @@ function bi_level_dual_arc_formulation(arcs, sources, n, t, attack_paths, attack
 
     optimize!(model)
 
-    feasibleSolutionFound = primal_status(model) == MOI.FEASIBLE_POINT
-    isOptimal = termination_status(model) == MOI.OPTIMAL
-
-    if feasibleSolutionFound
+    if primal_status(model) == MOI.FEASIBLE_POINT
         println("\n=== Coût total ===")
         println(JuMP.objective_value(model))
         println("\n=== Placement des VNF ===")
